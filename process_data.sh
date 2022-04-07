@@ -88,7 +88,7 @@ label_if_does_not_exist(){
   else
     echo "Not found. Proceeding with automatic labeling."
     # Generate labeled segmentation
-    sct_label_vertebrae -i ${file}.nii.gz -s ${file_seg}.nii.gz -c t1
+    sct_label_vertebrae -i ${file}.nii.gz -s ${file_seg}.nii.gz -c   # Maybe put T2?? to test out
   fi
 }
 
@@ -116,7 +116,7 @@ sct_process_segmentation -i ${file_t1_seg}.nii.gz -vert 2:3 -vertfile ${file_t1_
 file_t2="T2w"
 
 # Segment spinal cord (only if it does not exist)
-segment_if_does_not_exist $file_t2 "t2"
+segment_if_does_not_exist $file_t2 "t1"  # Changed to T1 --> to validate
 file_t2_seg=$FILESEG
 
 # Create labeled segmentation (only if it does not exist) 
