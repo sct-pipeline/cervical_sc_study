@@ -76,6 +76,7 @@ cd ${SUBJECT}
 label_if_does_not_exist(){
   local file="$1"
   local file_seg="$2"
+  local contrast="$3"
   # Update global variable with segmentation file name
   FILELABEL="${file}_labels"
   FILELABELMANUAL="${PATH_DATA}/${SUBJECT}/${FILELABEL}-manual.nii.gz"
@@ -88,7 +89,7 @@ label_if_does_not_exist(){
   else
     echo "Not found. Proceeding with automatic labeling."
     # Generate labeled segmentation
-    sct_label_vertebrae -i ${file}.nii.gz -s ${file_seg}.nii.gz -c   # Maybe put T2?? to test out
+    sct_label_vertebrae -i ${file}.nii.gz -s ${file_seg}.nii.gz -c $contrast  # Maybe put T2?? to test out
   fi
 }
 
@@ -102,7 +103,7 @@ segment_if_does_not_exist $file_t1 "t1"
 file_t1_seg=$FILESEG
 
 # Create labeled segmentation (only if it does not exist) 
-label_if_does_not_exist ${file_t1} ${file_t1_seg}
+label_if_does_not_exist ${file_t1} ${file_t1_seg} "t1"
 file_t1_seg_labeled="${file_t1_seg}_labeled"
 
 # Generate QC report to assess vertebral labeling
@@ -120,7 +121,7 @@ segment_if_does_not_exist $file_t2 "t1"  # Changed to T1 --> to validate
 file_t2_seg=$FILESEG
 
 # Create labeled segmentation (only if it does not exist) 
-label_if_does_not_exist ${file_t2} ${file_t2_seg}
+label_if_does_not_exist ${file_t2} ${file_t2_seg} "t2"
 file_t2_seg_labeled="${file_t2_seg}_labeled"
 
 # Generate QC report to assess vertebral labeling
@@ -138,7 +139,7 @@ segment_if_does_not_exist $file_t2_flair "t1"
 file_t2_flair_seg=$FILESEG
 
 # Create labeled segmentation (only if it does not exist) 
-label_if_does_not_exist ${file_t2_flair} ${file_t2_flair_seg}
+label_if_does_not_exist ${file_t2_flair} ${file_t2_flair_seg} "t2"
 file_t2_flair_seg_labeled="${file_t2_flair_seg}_labeled"
 
 # Generate QC report to assess vertebral labeling
