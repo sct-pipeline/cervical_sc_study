@@ -18,8 +18,7 @@ SCT_Cervical.Cord
 │   ├── T2w.nii.gz
 │   ├── T2w_seg.nii.gz --> Manual segmentation of T2w
 │   ├── T2w_flair.nii.gz
-│   ├── T2w_flair.nii.gz --> Manual segmentation of T2w_flair
-│   └── sub-1000710_T2w.nii.gz
+│   └── T2w_flair.nii.gz --> Manual segmentation of T2w_flair
 ...
 ~~~
 
