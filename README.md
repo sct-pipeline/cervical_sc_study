@@ -2,7 +2,7 @@
 
 ## Data struture:
 The automatic script was created for the following data structure.
-Manual segmentations for T1w are named: `SC_seg.nii.gz`, for T2w: `T2w_seg.nii.gz` and for T2w_flair: `T2w_flair_seg.nii.gz. 
+Manual segmentations for T1w are named: `SC_seg.nii.gz`, for T2w: `T2w_seg.nii.gz` and for T2w_flair: `T2w_flair_seg.nii.gz`. 
 Manual disc labels are named: `CONTRAST_labels-manual.nii.gz`.
 
 ~~~
