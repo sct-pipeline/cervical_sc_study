@@ -38,4 +38,3 @@ To create manual disc labeling, lauch the following command and click at the pos
 ~~~
 sct_label_utils -i <IMAGE> -create-viewer 2,3,4 -o <IMAGE>_labels-manual.nii..gz
 ~~~
-~~~
