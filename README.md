@@ -36,5 +36,5 @@ sct_run_batch -path-data <PATH_DATA> -path-output ~/cervical_sc_results/ -jobs -
 To create manual disc labeling, lauch the following command and click at the posterior disc for C1-C2, C2-C3 and C3-C4.
 
 ~~~
-sct_label_utils -i <IMAGE> -create-viewer 2,3,4 -o <IMAGE>_labels-manual.nii..gz
+sct_label_utils -i <IMAGE> -create-viewer 2,3,4 -o <IMAGE>_labels-manual.nii.gz
 ~~~
